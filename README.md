@@ -45,6 +45,11 @@ $ luarocks install cutorch
 $ luarocks install cunn
 ```
 
+Make sure you have Xcode command line tools installed if the `cutorch` build fails:
+```bash
+$ xcode-select --install
+```
+
 If you'd like to use the cudnn backend (the pretrained checkpoint does), you also have to install [cudnn](https://github.com/soumith/cudnn.torch). First follow the link to [NVIDIA website](https://developer.nvidia.com/cuDNN), register with them and download the cudnn library. Then make sure you adjust your `LD_LIBRARY_PATH` to point to the `lib64` folder that contains the library (e.g. `libcudnn.so.7.0.64`). Then git clone the `cudnn.torch` repo, `cd` inside and do `luarocks make cudnn-scm-1.rockspec` to build the Torch bindings.
 
 #### For training
